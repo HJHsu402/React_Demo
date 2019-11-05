@@ -1,10 +1,15 @@
-import React from 'react'
-
-export default function Footer() {
-    return (
-        <div className="footer">
-            我是 Footer
-        </div>
-    )
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+export default class Footer extends Component {
+    render() {
+        return (
+            <div className="footer">
+                {this.props.name}
+            </div>
+        )
+    }
+}
+Footer.propTypes = {
+    name: PropTypes.string
 }
 
