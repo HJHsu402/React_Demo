@@ -5,6 +5,7 @@ export default class Footer extends Component {
         return (
             <div className="footer">
                 {this.props.name}
+                
             </div>
         )
     }

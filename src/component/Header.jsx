@@ -5,7 +5,7 @@ export default class Header extends Component {
         super(props)
     
         this.state = {
-             title:"Header"
+             title:"REACT 範例"
         }
     }
     
@@ -13,6 +13,7 @@ export default class Header extends Component {
         return (
             <div className="header">
                 <h1>{this.state.title}</h1>
+                
             </div>
         )
     }

@@ -1,6 +1,8 @@
 const path = require("path");
 const webpack = require("webpack");
 const TransferWebpackPlugin = require('transfer-webpack-plugin')
+// const CopyPlugin = require('copy-webpack-plugin')
+
 module.exports = {
   entry: "./src/index.js",
   mode: "development",
@@ -31,13 +33,16 @@ module.exports = {
     contentBase: path.join(__dirname, "www/"),
     port: 3000,
     publicPath: "http://localhost:3000/dist/",
-    hotOnly: true
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new TransferWebpackPlugin([{
       from: 'www'
     }, ], path.resolve(__dirname)),
-
+  // new CopyPlugin([
+    //   { from: 'www/', to: path.resolve(__dirname, "dist/"), }
+    // ], {
+    //   ignore: ['*.bat'],
+    // }),
   ]
 };
